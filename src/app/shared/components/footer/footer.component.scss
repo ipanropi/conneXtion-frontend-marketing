@@ -1,0 +1,36 @@
+.footer-container {
+    color: #FFF;
+    background: #30385F;
+    font-size: 14px;
+    line-height: 17px;
+    min-height: 89.35px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .left-content {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        .logo {
+            width: 140px;
+            height: auto;
+            margin-left: 53.89px;
+            margin-right: 22px;
+        }
+    }
+
+    .right-content {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin-right: 43px;
+    }
+
+    a, a:hover {
+        color:#FFF;
+    }
+}

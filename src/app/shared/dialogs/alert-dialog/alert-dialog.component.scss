@@ -1,0 +1,62 @@
+.container {
+  padding: 24px;
+    .icon {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .icon-content  {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cta-close {
+      display: flex;
+      justify-content: flex-end;
+      cursor: pointer;
+      .cta-btn-close{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:22px;
+        height:22px;
+      }
+    }
+  
+    .description {
+      font-size: 14px;
+      color: #8A92A6;
+    }
+
+    .line {
+      height: 1px;
+      background: #E3E3E3;
+    }
+  
+    .dialog-cta {
+      margin-top: 10px;
+      text-align: center;
+      .cta-btn {
+          padding: 10px;
+          color: #FFF;
+          border-radius: 12px;
+          background-color: #608EE9;;
+          width: 350px;
+          height: 44px;
+        }
+    }
+}
+
+::ng-deep .mat-dialog-container {
+  border-radius: 16px !important;
+  padding: 0;
+}

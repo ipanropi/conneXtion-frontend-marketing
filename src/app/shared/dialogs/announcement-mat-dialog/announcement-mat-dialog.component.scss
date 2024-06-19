@@ -1,0 +1,14 @@
+.fill-space {
+  // This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
+
+textarea {
+  width: 100%;
+}
+
+.spacing {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}

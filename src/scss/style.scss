@@ -1,0 +1,33 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+mat-drawer {
+    width: 200px !important;
+  }
+
+  @media only screen and (min-width: 300px) and (orientation: landscape) {
+    .mat-dialog-container {
+      max-height: 80vh !important;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .mat-dialog-container {
+      max-height: 95vh !important;
+    }
+  }
+
+body {
+  font-family: Montserrat;
+}
+
+.error-label {
+  font-size: 13px;
+  color: #EB5757;
+}

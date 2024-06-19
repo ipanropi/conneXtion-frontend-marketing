@@ -1,0 +1,23 @@
+// Here you can add other styles
+.nav-dropdown-toggle + app-sidebar-nav-items  app-sidebar-nav-link-content {
+    padding-left: 25px !important;
+}
+
+body {
+    background: #FFF !important;
+}
+
+img, video {
+    max-width: 100% !important;
+    max-height: 100%;
+}
+
+.mat-drawer-container {
+    background-color: #FFF !important;
+}
+
+button {
+    &:focus {
+        outline: 0 !important;
+    }
+}

@@ -1,0 +1,53 @@
+<!-- <mat-drawer-container *ngIf="appConfig.navItem" [hasBackdrop]="false"> -->
+  <!-- <mat-drawer #drawer [mode]="drawerMode" [(opened)]="opened" class="drawer-container">
+    <div class="top-section">
+      <a *ngIf="!isClient" routerLink="/ihs/create" class="cta-btn orange" [ngClass]="{'active' : currentRoute === '/ihs/create'}">
+        <img *ngIf="currentRoute === '/ihs/create'" src="assets/icons/create-ihs-orange.png" />
+        <img *ngIf="currentRoute !== '/ihs/create'" src="assets/icons/create-ihs.png" />
+        <div class="cta-label">Create IHS</div>
+      </a>
+      <a *ngIf="isClient" routerLink="/submission/new" class="cta-btn orange" [ngClass]="{'active' : currentRoute === '/submission/new', 'client' : isClient}">
+        <img *ngIf="currentRoute === '/submission/new'" src="assets/icons/create-ihs-orange.png" />
+        <img *ngIf="currentRoute !== '/submission/new'" src="assets/icons/create-ihs.png" />
+        <div class="cta-label">New Submission</div>
+      </a>
+    </div>
+
+    <div class="menu-section">
+      <a routerLink={{nav.url}} [queryParams]=nav.queryParam  class="nav-row" [ngClass]="{'active' : nav.active }" *ngFor="let nav of appConfig.navItem">
+        <div class="nav-icon"><img src="assets/icons/{{nav.icon}}.png" /></div>
+        <div class="nav-label" [innerHtml]="nav.name"></div>
+      </a>
+    </div>
+   
+    <div class="version">v{{appBuildVersion}}</div>
+  </mat-drawer> -->
+
+  <!-- <mat-drawer-content>
+    <div class="top-bar"> -->
+      <!-- <img class="toggle-btn" src="assets/icons/menu.jpg" (click)="onDrawerToggle()" /> -->
+      <!-- <a *ngIf="!authService.isClient" class="logo-link" routerLink="/dashboard"><img src="assets/img/powervest-white.png" /></a>
+      <a *ngIf="authService.isClient" class="logo-link" routerLink="/submission/new"><img src="assets/img/powervest-white.png" /></a>
+      <div class="right-content">
+        <div class="profile-label">Hello, {{authService.currentUserValue.user.fullName}}</div>
+        <div class="top-icon" title="Notifications" [autoClose]="'outside'" [ngbPopover]="popContent" popoverClass="message-popover">
+          <img (click)="onReadNotification()" src="assets/icons/bell{{appConfig.hasNotification ? '-notification' : ''}}.png" /> -->
+          <!-- <img *ngIf="!appConfig.hasNotification" (click)="onReadNotification()" src="assets/icons/bell.png" /> -->
+          <!-- <ng-template #popContent>
+            <div class="message-container">
+              <a [routerLink]="message.link" class="message-row" *ngFor="let message of messageList">
+                <div class="message-text">{{ message.message }}</div>
+                <div class="message-time">{{ message.createdAt }}</div>
+              </a>
+            </div>
+          </ng-template>
+        </div>
+        <div class="top-icon" title="Logout" (click)="onLogout()"><img src="assets/icons/logout.png" /></div>
+      </div>
+    </div>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+<!-- <app-simple-footer></app-simple-footer> -->

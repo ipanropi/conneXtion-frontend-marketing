@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="cta-close">
+        <img src="assets\icons\close-dialog-icon.png" class="cta-btn-close" (click)="onCloseDialog(false)"/>
+    </div>
+    <div class="dialog-content">
+        <div class="icon-content">
+            <img *ngIf="data.icon" src="assets/icons/{{data.icon}}.svg" class="icon" />
+        </div>
+        <div class="title">{{data.title}}</div>
+        <div class="description">{{ data.description }}</div>
+    </div>
+    <div class="line mt-5"></div>
+   <div class="dialog-cta">
+       <button class="btn cta-btn fill" (click)="onCloseDialog(true)">Done</button>
+   </div>
+</div>

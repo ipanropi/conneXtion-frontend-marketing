@@ -1,0 +1,36 @@
+.container {
+    .description {
+        font-size: 18px;
+    }
+
+    .cta-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 15px;
+        .cta-btn {
+          border-radius: 25px;
+          cursor: pointer;
+          padding: 7px 10px;
+          font-size: 18px;
+          width: 100px;
+          text-align: center;
+          border: 0;
+    
+          &:hover {
+            opacity: 0.8;
+          }
+    
+          &:first-child {
+            background-color: #098A4A;
+            color: #fff;
+            margin-right: 10px;
+          }
+    
+          &:last-child {
+            background-color: #dc143c;
+            color: #fff;
+          }
+        }
+      }
+}

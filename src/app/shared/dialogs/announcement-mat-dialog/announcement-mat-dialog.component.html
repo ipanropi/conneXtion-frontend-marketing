@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <span class="modal-title example-fill-remaining-space">{{title}}</span>
+  <span class="fill-space"></span>
+  <button class="btn-dialog-close float-right" mat-button (click)="onClose()" tabindex="-1">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="grid content" mat-dialog-content style="padding-top:15px;">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row section">
+      <div class="col-md-12 section-col">
+        <label for="txtTitle">Title</label>
+        <input class="form-control" id="txtTitle" type="text" placeholder="Enter title"
+        formControlName="title" [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
+        <div *ngIf="submitted && f.title.errors" class="error invalid-feedback">
+          <div *ngIf="f.title.errors.required">Please enter title</div>
+        </div>
+      </div>
+      <div class="col-md-12 section-col">
+        <label for="txtContent">Message</label>
+        <textarea class="input textarea form-control" id="txtContent" formControlName="content" rows="5" placeholder="Enter Message"
+        [ngClass]="{ 'is-invalid': submitted && f.content.errors }"></textarea>
+        <div *ngIf="submitted && f.content.errors" class="error invalid-feedback">
+          <div *ngIf="f.content.errors.required">Please enter content</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row section float-right" style="padding-right: 15px; padding-top: 15px;">
+      <button mat-raised-button color="primary" class="spacing">Send</button>
+      <button mat-raised-button class="btn-white-standard spacing" type="button" (click)="onClose()">Close</button>
+    </div>
+  </form>
+</div>
+<!-- <div class="float-right" mat-dialog-actions></div> -->

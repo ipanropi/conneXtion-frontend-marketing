@@ -1,0 +1,27 @@
+.dashboard-footer {
+    background-color: #098A4A;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #FFF;
+    padding: 15px 20px;
+    justify-content: space-between;
+
+    .right-content {
+        display: flex;
+        flex-direction: row;
+        color: #FFF;
+
+        .divider {
+            margin-right: 20px;
+        }
+        a {
+            color: #FFF;
+            margin-right: 20px;
+        }
+        
+    }
+    img {
+        width: 170px;
+    }
+}

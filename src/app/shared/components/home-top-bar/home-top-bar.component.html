@@ -1,0 +1,24 @@
+<div class="top-container">
+        <div class="top-bar fixed">
+            <div class="logo-container">
+                <a routerLink="/"><img src="assets/img/connextion-logo.png" class="logo"/></a>
+            </div>
+            <div class="right-content">
+                <div class="nav-container">
+                    <div class="nav-label" routerLink="/home" fragment="home">Home</div>
+                    <div class="nav-label" routerLink="/home" fragment="tools">Product</div>
+                    <div class="nav-label" routerLink="/home" fragment="pricing">Package</div>
+                    <div class="nav-label" routerLink="/home" fragment="about">About Us</div>
+                    <div class="nav-label" routerLink="/home" fragment="contact">Contact Us</div>
+                </div>
+                <div class="cta-container">
+                    <a routerLink="/#" [ngClass]="[btnStyle]">
+                        <input [(ngModel)]="searchText" type="search" (keydown.enter)="onSearch($event.target.value)" [ngClass]="[labelStyle]" class="search-label">
+                        <img src="assets/icons/search.png" style="height:17px;width:17px;" class="search-icon" (click)="onClick()"/>
+                    </a>
+                    
+                    <a (click)="onDashboardLogin()" class="cta-btn "><img src="assets/icons/user.png" style="height: 20px;width:20px;"/></a>
+                </div>
+            </div>
+        </div>
+</div>

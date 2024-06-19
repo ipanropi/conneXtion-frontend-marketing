@@ -1,0 +1,329 @@
+<div class="home-container" id="home">
+    <app-home-top-bar></app-home-top-bar>
+    <div class="swiper-container">
+        <swiper [config]="config" (swiper)="onSwiper($event)">
+            <ng-template swiperSlide>
+                <div class="slider-content">
+                    <div class="sub-title">HANDLE ALL YOUR BUSINESS OPERATIONS AT <span class="dark-blue">ONCE</span></div>
+                    <div class="section-description">Everything your company needs to manage time effectively and complete tasks quickly.</div>
+                    <a href="https://tenant.connextionapps.com/my/package"><div class="cta-btn">SUBSCRIBE NOW</div></a>
+                </div>
+                <img class="swiper-grid" src="assets/img/home-banner1.png" />
+            </ng-template>
+        </swiper>
+    </div>
+    <div class="first-section full" id="tools">
+        <div class="left-content">
+            <div class="detail">
+                <div  id="blue-background"></div>
+                <!--Phone video/animation-->
+                <div class="phone">
+                    <div class="notch-container">
+                          <div class="notch"></div>
+                    </div>
+                    <video controls autoplay >
+                        <source src="assets/video/connextion-video2.mp4" type="video/mp4">
+                    </video>
+                  </div>
+            </div>
+        </div>
+        <div class="desc-container">
+            <div class="desc-title">ONE APPLICATION, </div>
+            <div class="desc-title">DOZENS OF <span class="dark-blue">INCREDIBLE</span> TOOLS</div>
+            <div class="swiper-selling">
+                <swiper [pagination]="{ clickable: true }" [slidesPerView]="3" [loop]="true"
+                [slideToClickedSlide]="true" [autoplay]="{delay: 7000, disableOnInteraction: false }"
+                class="my-swiper">
+                    <ng-template swiperSlide>
+                        <div class="border-active">
+                            <img class="image-slider" src="assets/icons/date.png" />
+                            <div class="slider-content sub-title">Attendance Tracker</div>
+                        </div>
+                        <div class="slider-content description is-active">
+                            Track location & attendance of staff by clock in and clock out. View attendance history by monthly
+                            and filter attendance history with day or sorting it with absent, present, overtime
+                        </div>
+                    </ng-template>
+                    <ng-template swiperSlide>
+                        <div class="border-active">
+                            <img class="image-slider" src="assets/icons/graph.png" />
+                            <div class="slider-content sub-title">Workforce Engagement</div>
+                        </div>  
+                        <div class="slider-content description is-active">
+                            Streamline workforce engagement with centralized communications, task assignment through mobile app, thus improving productivity.
+                        </div>
+                    </ng-template>
+                    <ng-template swiperSlide>
+                        <div class="border-active">
+                            <img class="image-slider" src="assets/icons/class.png" />
+                            <div class="slider-content sub-title">Hybrid Work Model</div>
+                        </div>
+                        <div class="slider-content description is-active">
+                            App built with all fundamentally transformative strategies, combination of interactions, value creation and delivery that are at the core of work.
+                        </div>
+                    </ng-template>
+                </swiper>
+            </div>
+        </div>
+    </div>
+    <div class="second-section full" id=""
+        style="background-image: url(../../../assets/img/communicate-section.png); background-size: cover;">
+        <div class="desc-container">
+            <div class="desc-title">COMMUNICATE <span class="dark-blue">EFFORTLESSLY</span> WHEREVER YOU ARE</div>
+            <div class="desc-description">
+                Everything you require to streamline workplace communication and maintain consensus. Using your own connectivity application, keep your staff informed, connected, and updated wherever they are. Try it now!
+            </div> 
+                <div class="feature-row">
+                    <div class="feature-wrapper">
+                        <div class="feature-top">
+                            <div class="cta-btn-apple ">
+                                <a class="text-hover">DOWNLOAD NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-wrapper">
+                        <div class="feature-top">
+                            <div class="cta-btn-google ">
+                                <a class="text-hover">DOWNLOAD NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="third-section full" id="pricing">
+        <div id="blue-background"></div>
+        <div class="desc-container">
+            <div class="desc-text">
+                <div class="desc-title">SIMPLE PRICING FOR<span class="dark-blue">EVERYONE</span></div>
+                <div class="desc-description">
+                    All our plans include unlimited support, hosting and maintenance with no hidden costs, no limit on features! enjoy real transparency :)
+                    <div class="">
+                        Download and start using ConneXtion today!
+                    </div> 
+                </div> 
+            </div>
+
+            <section class="section section-lg swiper-package container">
+                <div class="slider-row">
+                    <span slot="container-start" (click)="swipePrevPackage()" class="swiper-start swiper-nav">
+                        <img src="../../../assets/icons/left-arrow-black.png" *ngIf="!leftArrow"/>
+                        <img src="../../../assets/icons/left-arrow-blue.png" *ngIf="leftArrow"/>
+                    </span>
+                    <swiper class="swiper-container" #package [config]="configPackage" (swiper)="onSwiper($event)">
+                        <ng-template swiperSlide  *ngFor="let item of packageList; let i = index">
+                            <div class="img-wrapper stat-container display-package" >
+                                <div class="swiper-grid package-title basic" [style.background-color]="item.packageColor">
+                                    <div class="title-name">
+                                        {{ item.packageName }} 
+                                    </div>
+                                    <div class="title-price">
+                                        <span *ngIf="item.packageId !== 1">
+                                            From <span class="price">RM{{ item.price12Months }}</span>/month
+                                        </span>
+                                        <span *ngIf="item.packageId === 1">
+                                            Download ConneXtion App Now!
+                                        </span>
+                                    </div>
+                                </div>
+            
+                                <div class="package-detail">
+                                    <div class="detail">
+                                        <span>
+                                            No. of Users
+                                        </span>
+                                        <span class="blue">
+                                            <span *ngIf="item.packageName !== 'Enterprise Package'">
+                                                up to  {{ item.noOfUsersLimit }} Users
+                                            </span>
+                                            <span *ngIf="item.packageName === 'Enterprise Package'">
+                                                above  {{ item.noOfUsersLimit }} Users
+                                            </span>
+                                        </span>
+                                    </div>
+                
+                                    <div class="detail">
+                                        <span>
+                                            Duration
+                                        </span>
+                                        <span class="blue">
+                                            <span *ngIf="item.packageId !== 1">
+                                                Unlimited
+                                            </span>
+                                            <span *ngIf="item.packageId === 1">
+                                                14 Days
+                                            </span>
+                                        </span>
+                                    </div>
+            
+                                    <div class="detail">
+                                        <span>
+                                            Storage 200MB
+                                        </span>
+                                        <span class="blue">
+                                            <span *ngIf="item.packageName !== 'Enterprise Package' && item.packageId !== 1">
+                                                Limited To {{ item.storageGbLimit }}GB
+                                            </span>
+                                            <span *ngIf="item.packageName === 'Enterprise Package'">
+                                                Unlimited
+                                            </span>
+                                            <span *ngIf="item.packageId === 1">
+                                                Limited To {{ item.storageGbLimit * 1000 }}MB
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="detail">
+                                        <span>
+                                            Time Clock
+                                        </span>
+                                        <span class="blue" [ngClass]="{'blue': item.timeClock === 1,  'black': item.timeClock !== 1}">
+                                            <span *ngIf="item.timeClock === 1">YES</span>
+                                            <span *ngIf="item.timeClock !== 1">N/A</span>
+                                        </span>
+                                    </div>
+                                    <div class="detail">
+                                        <span>
+                                            Task Assignment 
+                                        </span>
+                                        <span class="blue" [ngClass]="{'blue': item.taskAssignment === 1,  'black': item.taskAssignment !== 1}">
+                                            <span *ngIf="item.taskAssignment === 1">YES</span>
+                                            <span *ngIf="item.taskAssignment !== 1">N/A</span>
+                                        </span>
+                                    </div>
+                                    <div class="detail">
+                                        <span>
+                                            Video Voice Note for Task Asgmt.
+                                        </span>
+                                        <span class="blue" [ngClass]="{'blue': item.taskVideoAndVoice === 1,  'black': item.taskVideoAndVoice !== 1}">
+                                            <span *ngIf="item.taskVideoAndVoice === 1">YES</span>
+                                            <span *ngIf="item.taskVideoAndVoice !== 1">N/A</span>
+                                        </span>
+                                    </div>
+                                    <div class="detail">
+                                        <span>
+                                            News Update
+                                        </span>
+                                        <span class="blue" [ngClass]="{'blue': item.newsUpdate === 1,  'black': item.newsUpdate !== 1}">
+                                            <span *ngIf="item.newsUpdate === 1">YES</span>
+                                            <span *ngIf="item.newsUpdate !== 1">N/A</span>
+                                        </span>
+                                    </div>
+                                    <div class="detail">
+                                        <span>
+                                            Payment Module
+                                        </span>
+                                        <span class="black" >  <!-- class="blue" [ngClass]="{'blue': item.paymentModule === 1,  'black': item.paymentModule !== 1}"-->
+                                            {{ item.paymentModuleLabel }}
+                                            <!-- <span *ngIf="item.paymentModule === 1">YES</span>
+                                            <span *ngIf="item.paymentModule !== 1">N/A</span> -->
+                                            <span>N/A</span>
+                                        </span>
+                                    </div>
+                                    <div class="detail">
+                                        <span>
+                                            3rd Party Softwate Integrations
+                                        </span>
+                                        <span class="black" > <!-- class="blue" [ngClass]="{'blue': item.thirdParty === 1,  'black': item.thirdParty !== 1}"-->
+                                            <!-- <span *ngIf="item.thirdParty === 1">YES</span>
+                                            <span *ngIf="item.thirdParty !== 1">N/A</span> -->
+                                            <span>N/A</span>
+                                        </span>
+                                    </div>
+                                </div>
+            
+                                <div class="section-price" *ngIf="item.packageName !== 'Enterprise Package' && item.packageId !== 1">
+                                    <a href="https://tenant.connextionapps.com/my/package" target="#">
+                                        <div class="package-price" (click)="onChangeSelected(item.packageId, 12)"
+                                            [ngClass]="{'isSelectedPro': (item.packageName === 'Professional Package' && selectedPro === 12), 'isSelectedBasic': item.packageName === 'Basic Package' && selectedBasic === 12, 'isSelectedExe':  item.packageName === 'Executive Package' && selectedExe === 12 }">
+                                            
+                                            <div class="price">
+                                            RM{{item.price12Months}} /month
+                                            <span class="best-deal ml-1">Best Deal</span>
+                                            </div>
+                                            <div>
+                                                12 Months  (RM{{item.price12Months*12 | number: '1.2-2'}})
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="https://tenant.connextionapps.com/my/package" target="#">
+                                        <div class="package-price" (click)="onChangeSelected(item.packageId, 6)"
+                                            [ngClass]="{'isSelectedPro': (item.packageName === 'Professional Package' && selectedPro === 6), 'isSelectedBasic': item.packageName === 'Basic Package' && selectedBasic === 6, 'isSelectedExe':  item.packageName === 'Executive Package' && selectedExe === 6 }">
+                                            <div class="price">
+                                                RM{{item.price6Months}} /month
+                                            </div>
+                                            <div>
+                                                6 Months (RM{{item.price6Months*6 | number: '1.2-2'}})
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="https://tenant.connextionapps.com/my/package" target="#">
+                                        <div class="package-price" (click)="onChangeSelected(item.packageId, 3)"
+                                            [ngClass]="{'isSelectedPro': (item.packageName === 'Professional Package' && selectedPro === 3), 'isSelectedBasic': item.packageName === 'Basic Package' && selectedBasic === 3, 'isSelectedExe':  item.packageName === 'Executive Package' && selectedExe === 3 }">
+                                            <div class="price">
+                                                RM{{item.price3Months}} /month
+                                            </div>
+                                            <div>
+                                                3 Months (RM{{item.price3Months*3 | number: '1.2-2'}} )
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+            
+                                <div class="section-button mb-3" [ngClass]="{'enterprise': item.packageName === 'Enterprise Package' || item.packageId === 1}">
+                                    <div class="button-style" (click)="redirectToWhatsapp()" *ngIf="item.packageName === 'Enterprise Package'">
+                                        <div class="cta-btn whatsapp">
+                                            <img src="../../../assets/icons/whatsapp.png" class="whatsapp-icon"/>
+                                            Whatsapp
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                    <span slot="container-end" class="swiper-end swiper-nav" (click)="swipeNextPackage()">
+                        <img src="../../../assets/icons/right-arrow-black.png" *ngIf="!rightArrow"/>
+                        <img src="../../../assets/icons/right-arrow-blue.png" *ngIf="rightArrow"/>
+                    </span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="fourth-section full" id="about"
+        style="background-image: url(../../../assets/img/about-us.png); background-size: cover;">
+        <div class="desc-container">
+            <div class="desc-title">ABOUT <span class="dark-blue">US</span></div>
+            <div class="desc-description">
+                Isn't it difficult to organise and manage your business when you have a very tight schedule? That’s why we developed ConneXtion! With ConneXtion, you can manage your entire business just at your fingertips! You can easily keep on eyes of your employee's performance no matter where you are. We encourage the management team to focus on growing and running the business. One application to replace them all.
+            </div> 
+        </div>
+    </div>
+    <div class="fifth-section full" id="contact">
+        <div id="blue-background"></div>
+        <div class="desc-container">
+        <div class="stat-container">
+            <form [formGroup]="messageForm">
+                <div class="desc-title ">CONTACT US</div>
+                <div class="desc-description">Get in touch and let us know how we can help.</div>
+                <div class="input-text">
+                    <div class="text-label">Name</div>
+                    <input class="form-control text-color" placeholder="Enter Name" formControlName="name">
+                </div>
+                <div class="input-text">
+                    <div class="text-label">Email</div>
+                    <input class="form-control text-color" placeholder="Enter Email" formControlName="email">
+                </div>
+                <div class="input-text">
+                    <div class="text-label">Message</div>
+                    <input class="form-control text-color" placeholder="Enter Message" formControlName="message">
+                </div>
+                <div class="cta-btn" (click)="onSubmitForm()">SUBMIT NOW</div>
+            </form>
+            
+            
+     
+        </div>
+        </div>
+    </div>
+    
+    <app-connextion-footer></app-connextion-footer> 
+</div>
